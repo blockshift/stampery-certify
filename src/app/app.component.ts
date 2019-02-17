@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { AppService } from './app.service';
 import * as shajs from 'sha.js';
 @Component({
@@ -7,7 +7,9 @@ import * as shajs from 'sha.js';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- constructor(private exampleService: AppService){}	
+ constructor(private exampleService: AppService){}
+ @ViewChild('dataContainer') dataContainer: ElementRef;
+@ViewChild('dataContainer2') dataContainer2: ElementRef;
     onSubmit(value: any) {
     console.log(value);
    // var hash=shajs('sha256').update(value.name).digest('hex');
@@ -25,12 +27,14 @@ try {
     var timestamp = parseresponse.timestamp;
     console.log("Stamp id received",stampid);
     console.log("Timestamp",timestamp);
+  this.dataContainer.nativeElement.innerHTML = stampid;
+  this.dataContainer2.nativeElement.innerHTML = timestamp;
 
 }
 catch(e){
 
 // Print this error on frontend when stamping failed
-	console.log("Error");
+	// console.log("Error");
 }    
 
     });
