@@ -11,19 +11,21 @@ export class AppService {
   constructor(private http:Http) { }
 
 
-  createstamp(username,tokenid){
+  createstamp(username,fathername,cgpa,nric){
    console.log("Name",username);
-   console.log("Id",tokenid);
+   
 
  
   let headers = new Headers({'Content-Type': 'application/json'});
   let options = new RequestOptions({ headers: headers });
   let body = {
                 name: username,
-                id: tokenid
+                fathername: fathername,
+                cgpa:cgpa,
+                nric:nric
                 };
 
-return this.http.post('http://ec2-35-168-114-210.compute-1.amazonaws.com:8080/postrecord', body, options )
+return this.http.post('http://ec2-35-168-114-210.compute-1.amazonaws.com:4000/saverecord', body, options )
     .map((res: Response) => res)
     .catch((error:any) => Observable.throw(error.json().error || 'Server error shit bang in'));  
 
