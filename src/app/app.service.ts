@@ -11,7 +11,7 @@ export class AppService {
   constructor(private http:Http) { }
 
 
-  createstamp(username,fathername,cgpa,nric){
+  createstamp(username,coursename,startdate,enddate,nric){
    console.log("Name",username);
    
 
@@ -20,8 +20,9 @@ export class AppService {
   let options = new RequestOptions({ headers: headers });
   let body = {
                 name: username,
-                fathername: fathername,
-                cgpa:cgpa,
+                course: coursename,
+                startdate:startdate,
+                enddate:enddate,  
                 nric:nric
                 };
 
@@ -49,3 +50,6 @@ this.http
 
 
 }
+
+
+

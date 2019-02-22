@@ -14,7 +14,7 @@ export class AppComponent {
     console.log(value);
    // var hash=shajs('sha256').update(value.name).digest('hex');
  //  console.log("Hash",hash);
-    this.exampleService.createstamp(value.name,value.fathername,value.cgpa,value.nric).subscribe(data => {
+    this.exampleService.createstamp(value.name,value.coursename,value.startdate,value.enddate,value.nric).subscribe(data => {
 try {
 
 // Do json parsing and filter stamp id and timestamp when successfully added into blockchain
