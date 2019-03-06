@@ -1,38 +1,45 @@
 <div class="container">
-  <h2>Enter Student Data</h2>
-
+<img src="../assets/image/bca.png" alt="Logo" class="logo">
+  <h2>Certificate Issuance</h2>
+<h4><u>FOR INTERNAL USE ONLY:</u></h4>
+    <h4>
+       <ol>
+      <li>Fill in the form below with the correct details of the student and click <b>submit</b></li>
+      <li>A unique hash ID and timestamp will be generated. Using the <b>Hash ID</b>, anyone can verify the authenticity of
+        the certificate on the blockchain.</li>
+      </ol></h4>
+  
   <form #studentForm = "ngForm" (ngSubmit)="onSubmit(studentForm.value)">
     <div class="form-group">
-      <label>Student Name</label>
-      <input type="text" class="form-control" name="name" ngModel>
+      <label>Full Name</label>
+      <input type="text" class="form-control" name="name" ngModel placeholder="Full Name">
     </div>
 
     <div class="form-group">
-      <label>Course Name</label>
-      <input type="text" class="form-control" name="coursename" ngModel>
+      <label>Course Name/Course ID</label>
+      <input type="text" class="form-control" name="coursename" ngModel placeholder="Course Name/Course ID">
     </div>
     <div class="form-group">
-      <label>NRIC</label>
-      <input type="text" class="form-control" name="nric" ngModel>
+      <label>NRIC/Passport No.</label>
+      <input type="text" class="form-control" name="nric" ngModel placeholder="NRIC/Passport No.">
     </div>
 
        <div class="form-group">
-      <label>Start Date</label>
-      <input type="text" class="form-control" name="startdate" ngModel>
+      <label>Course Start Date (dd/mm/yyyy)</label>
+      <input type="text" class="form-control" name="startdate" ngModel placeholder="dd/mm/yyyy">
     </div>
 
     <div class="form-group">
-      <label>End Date</label>
-      <input type="text" class="form-control" name="enddate" ngModel>
+      <label>Course End Date (dd/mm/yyyy)</label>
+      <input type="text" class="form-control" name="enddate" ngModel placeholder="dd/mm/yyyy">
     </div>
 
-
-       
-
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
 
   </form>
 
-<div #dataContainer class="h2"></div>
-<div #dataContainer2 class="h2"></div>
+<h4><b>Hash ID</b></h4>
+<div #dataContainer class="h4"></div>
+<h4><b>Timestamp</b></h4>
+<div #dataContainer2 class="h4"></div>
 </div>
