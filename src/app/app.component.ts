@@ -10,6 +10,7 @@ export class AppComponent {
  constructor(private exampleService: AppService){}
  @ViewChild('dataContainer') dataContainer: ElementRef;
 @ViewChild('dataContainer2') dataContainer2: ElementRef;
+transactionlink:string;
     onSubmit(value: any) {
     console.log(value);
    // var hash=shajs('sha256').update(value.name).digest('hex');
@@ -21,14 +22,17 @@ try {
 
     console.log("Data received",data);
     var response = data["_body"];
-    var parseresponse = JSON.parse(response);
 
-    var stampid = parseresponse.stampid;
-    var timestamp = parseresponse.timestamp;
-    console.log("Stamp id received",stampid);
-    console.log("Timestamp",timestamp);
-  this.dataContainer.nativeElement.innerHTML = stampid;
-  this.dataContainer2.nativeElement.innerHTML = timestamp;
+//   var parseresponse = JSON.parse(response);
+
+//    var stampid = parseresponse.stampid;
+ //   var timestamp = parseresponse.timestamp;
+ //   console.log("Stamp id received",stampid);
+ //   console.log("Timestamp",timestamp);
+//  this.dataContainer.nativeElement.innerHTML = response;
+  this.transactionlink = "https://ropsten.etherscan.io/tx/"+response;
+// this.dataContainer2.nativeElement.innerHTML = url;
+//  this.dataContainer2.nativeElement.innerHTML = timestamp;
 
 }
 catch(e){
