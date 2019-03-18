@@ -29,7 +29,7 @@ try {
  //   var timestamp = parseresponse.timestamp;
  //   console.log("Stamp id received",stampid);
  //   console.log("Timestamp",timestamp);
-//  this.dataContainer.nativeElement.innerHTML = response;
+   this.dataContainer.nativeElement.innerHTML = response;
   this.transactionlink = "https://ropsten.etherscan.io/tx/"+response;
 // this.dataContainer2.nativeElement.innerHTML = url;
 //  this.dataContainer2.nativeElement.innerHTML = timestamp;

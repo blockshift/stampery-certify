@@ -26,7 +26,7 @@ export class AppService {
   body.set('enddate',enddate);
  
 
-return this.http.post('http://ec2-35-168-114-210.compute-1.amazonaws.com:3001/sendtx', body.toString(),options )
+return this.http.post('https://gravypts.com/sendtx', body.toString(),options )
     .map((res: Response) => res)
     .catch((error:any) => Observable.throw(error.json().error || 'Server error shit bang in'));  
 
